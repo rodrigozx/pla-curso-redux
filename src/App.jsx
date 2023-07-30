@@ -1,12 +1,14 @@
-import { Col } from "antd";
 import "antd/dist/reset.css";
+import "./App.css";
+
+import logo from "./static/logo.svg";
+import { Col } from "antd";
+import { connect } from 'react-redux';
+import React, { useEffect } from "react";
+
 import Searcher from "./components/Searcher";
 import PokeList from "./components/PokeList";
-import logo from "./static/logo.svg";
-import "./App.css";
-import { useEffect } from "react";
 import { getPokemons } from "./api";
-import { connect } from 'react-redux';
 import { setPokemons as setPokemonsActions } from './actions';
 
 function App({ pokemons, setPokemons}) {
