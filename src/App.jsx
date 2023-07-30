@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 
 import Searcher from "./components/Searcher";
 import PokeList from "./components/PokeList";
-import { getPokemons } from "./api";
+import { getPokemons, getPokemonDetail } from "./api";
 import { setPokemons } from "./actions";
 
 function App() {
@@ -17,8 +17,12 @@ function App() {
 
   useEffect(() => {
     const fetchPokemons = async () => {
-      const res = await getPokemons();
-      dispatch(setPokemons(res));
+      const pokemonList = await getPokemons();
+      const pokemonListDetailed = await Promise.all(
+        pokemonList.map((pokemon) => getPokemonDetail(pokemon))
+      );
+
+      dispatch(setPokemons(pokemonListDetailed));
     };
     fetchPokemons();
   }, []);

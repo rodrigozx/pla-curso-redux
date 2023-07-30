@@ -3,7 +3,7 @@ export const logger = (store) => (next) => (action) => {
   //   console.log("logger");
   //   console.log("store", store);
   //   console.log("next", next);
-  console.log("action", action);
+  //   console.log("action", action);
   next(action);
 };
 
