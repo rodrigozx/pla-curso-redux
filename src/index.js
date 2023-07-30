@@ -2,11 +2,15 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { pokemonsReducer } from './reducers/pokemons';
-import { Provider } from 'react-redux';
-import { legacy_createStore as createStore } from 'redux';
+import { pokemonsReducer } from "./reducers/pokemons";
+import { Provider } from "react-redux";
+import { legacy_createStore as createStore } from "redux";
 
-const store = createStore(pokemonsReducer);
+const store = createStore(
+  pokemonsReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -16,4 +20,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
