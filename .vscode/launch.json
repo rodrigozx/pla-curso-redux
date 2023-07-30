@@ -1,0 +1,15 @@
+{
+  // https://web.archive.org/web/20180822224912/http://nealbuerger.com/2017/09/vscode-launch-create-react-app-and-chrome-with-launch-json/
+
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3001",
+      "preLaunchTask": "npmDev",
+      "postDebugTask": "terminateAll"
+    }
+  ]
+}
