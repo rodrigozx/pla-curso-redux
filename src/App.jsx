@@ -3,21 +3,22 @@ import "./App.css";
 
 import logo from "./static/logo.svg";
 import { Col } from "antd";
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 
 import Searcher from "./components/Searcher";
 import PokeList from "./components/PokeList";
 import { getPokemons } from "./api";
-import { setPokemons as setPokemonsActions } from './actions';
+import { setPokemons } from "./actions";
 
-function App({ pokemons, setPokemons}) {
-console.log("🚀 ~ file: App.js:13 ~ App ~ pokemons:", pokemons)
+function App() {
+  const pokemons = useSelector((state) => state.pokemons);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchPokemons = async () => {
       const res = await getPokemons();
-      setPokemons(res);
+      dispatch(setPokemons(res));
     };
     fetchPokemons();
   }, []);
@@ -35,12 +36,4 @@ console.log("🚀 ~ file: App.js:13 ~ App ~ pokemons:", pokemons)
   );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  setPokemons: (value) => dispatch(setPokemonsActions(value)),
-});
-
-const mapStateToProps = (state) => ({
-  pokemons: state.pokemons,
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
