@@ -5,8 +5,8 @@ const { Meta } = Card;
 const PokeCard = ({ pokemon }) => {
   return (
     <Card
-      title={pokemon.title}
-      cover={<img src={pokemon.cover} alt={pokemon.title} />}
+      title={pokemon.name}
+      cover={<img src={pokemon.cover} alt={pokemon.name} />}
       extra={<StarOutlined />}
     >
       <Meta description={pokemon.description} />
