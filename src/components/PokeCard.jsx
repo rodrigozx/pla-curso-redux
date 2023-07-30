@@ -7,7 +7,14 @@ const PokeCard = ({ pokemon }) => {
   return (
     <Card
       title={pokemon.name}
-      cover={<img src={pokemon.cover} alt={pokemon.name} />}
+      cover={
+        <img
+          src={
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
+          }
+          alt={pokemon.name}
+        />
+      }
       extra={<StarOutlined />}
     >
       <Meta description={pokemon.description} />
