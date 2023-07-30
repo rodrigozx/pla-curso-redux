@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pla-curso-redux/static/css/main.6c548457.css",
+    "main.js": "/pla-curso-redux/static/js/main.96a0cb66.js",
+    "index.html": "/pla-curso-redux/index.html",
+    "main.6c548457.css.map": "/pla-curso-redux/static/css/main.6c548457.css.map",
+    "main.96a0cb66.js.map": "/pla-curso-redux/static/js/main.96a0cb66.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c548457.css",
+    "static/js/main.96a0cb66.js"
+  ]
+}
