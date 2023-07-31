@@ -3,7 +3,7 @@ import "./App.css";
 
 import logo from "./static/logo.svg";
 import { Col, Spin } from "antd";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import React, { useEffect } from "react";
 import { getPokemonsWithDetails, setLoading } from "./actions";
 
@@ -12,8 +12,11 @@ import PokeList from "./components/PokeList";
 import { getPokemons } from "./api";
 
 function App() {
-  const pokemons = useSelector((state) => state.get("pokemons")).toJS();
-  const loading = useSelector((state) => state.get("loading"));
+  const pokemons = useSelector((state) =>
+    state.getIn(["data", "pokemons"], shallowEqual)
+  ).toJS(); // shallowEqual is used to compare the objects and avoid unnecessary re-renders
+
+  const loading = useSelector((state) => state.get(["ui", "loading"]));
 
   const dispatch = useDispatch();
 
@@ -24,9 +27,7 @@ function App() {
       dispatch(getPokemonsWithDetails(pokemonList));
     };
     fetchPokemons();
-    setTimeout(() => {
-      dispatch(setLoading(false));
-    }, 3000);
+    dispatch(setLoading(false));
   }, []);
 
   return (
