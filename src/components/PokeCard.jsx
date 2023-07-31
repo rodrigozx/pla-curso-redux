@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "antd";
 import { useDispatch } from "react-redux";
 import StarButton from "./StarButton";
-import { setFavorite } from "../actions";
+import { setFavorite } from "../slices/dataSlice";
 
 const { Meta } = Card;
 

@@ -1,4 +1,4 @@
-export const getPokemons = async () => {
+export const getPokemonList = async () => {
   return await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then((res) => {
       return res.json().then((data) => {
