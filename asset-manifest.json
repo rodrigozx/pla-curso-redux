@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/pla-curso-redux/static/css/main.4ead3c57.css",
-    "main.js": "/pla-curso-redux/static/js/main.e1db20bc.js",
+    "main.css": "/pla-curso-redux/static/css/main.a78ab228.css",
+    "main.js": "/pla-curso-redux/static/js/main.746099ba.js",
     "static/media/logo.svg": "/pla-curso-redux/static/media/logo.20ec85585f1d84777542d1b8f29ae635.svg",
     "index.html": "/pla-curso-redux/index.html",
-    "main.4ead3c57.css.map": "/pla-curso-redux/static/css/main.4ead3c57.css.map",
-    "main.e1db20bc.js.map": "/pla-curso-redux/static/js/main.e1db20bc.js.map"
+    "main.a78ab228.css.map": "/pla-curso-redux/static/css/main.a78ab228.css.map",
+    "main.746099ba.js.map": "/pla-curso-redux/static/js/main.746099ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ead3c57.css",
-    "static/js/main.e1db20bc.js"
+    "static/css/main.a78ab228.css",
+    "static/js/main.746099ba.js"
   ]
 }
