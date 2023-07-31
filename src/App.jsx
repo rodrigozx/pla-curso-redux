@@ -13,11 +13,16 @@ import { fetchPokemonWithDetails } from "./slices/dataSlice";
 function App() {
   const pokemons = useSelector((state) => state.data.pokemons, shallowEqual);
   const loading = useSelector((state) => state.ui.loading, shallowEqual);
+  const search = useSelector((state) => state.data.search, shallowEqual);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPokemonWithDetails());
   }, []);
+
+  const filteredPokemons = search
+    ? pokemons.filter((p) => p.name.includes(search))
+    : pokemons;
 
   return (
     <div className="App">
@@ -34,7 +39,7 @@ function App() {
           <Spin spinning size="large" />
         </Col>
       ) : (
-        <PokeList pokemons={pokemons} />
+        <PokeList pokemons={filteredPokemons} />
       )}
     </div>
   );

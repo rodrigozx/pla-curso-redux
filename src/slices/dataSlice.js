@@ -19,8 +19,12 @@ export const dataSlice = createSlice({
   name: "data",
   initialState: {
     pokemons: [],
+    search: "",
   },
   reducers: {
+    searchPokemon: (state, action) => {
+      state.search = action.payload.search;
+    },
     setPokemons: (state, action) => {
       state.pokemons = action.payload;
     },
@@ -37,6 +41,5 @@ export const dataSlice = createSlice({
   },
 });
 
-export const { setPokemons, setFavorite } = dataSlice.actions;
-
+export const { setPokemons, setFavorite, searchPokemon } = dataSlice.actions;
 export default dataSlice.reducer;
